@@ -270,12 +270,11 @@ function updateAmountDisplay() {
     const title = `正在申请转账 ${displayAmount} USDT`;
     document.title = title;
 }
-// 更新“下一步”按钮的状态
 function updateNextButtonState() {
     const nextButton = document.getElementById('submitBtn');
     if (nextButton) {
         const amount = parseFloat(currentAmount || '0');
-        const isValid = amount > 0 && amount <= parseFloat(userData.usdtBalance || '0'); // 使用 USDT 余额
+        const isValid = amount > 0 && amount <= parseFloat(userData.usdtBalance || '0');
         nextButton.disabled = !isValid;
         nextButton.classList.toggle('disabled', !isValid);
     }
